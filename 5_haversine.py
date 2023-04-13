@@ -14,11 +14,11 @@ vis_df["distance"] = NAN
 
 for vis_index in range(len(vis_df)):
     vis_row = vis_df.iloc[vis_index]
-    vis_c = (vis_row["lon"],vis_row["lat"])
+    vis_c = (vis_row["lat"], vis_row["lon"])
     distances = np.zeros(len(rrs_df))
     for rrs_index in range(len(rrs_df)):
         rrs_row = rrs_df.iloc[rrs_index]
-        rrs_c = (rrs_row["lon"], vis_row["lat"])
+        rrs_c = (vis_row["lat"], rrs_row["lon"])
         distances[rrs_index] = haversine(vis_c, rrs_c)
     min_index = np.argmin(distances)
     vis_df.at[vis_index,"rr"] = rrs_df.iloc[min_index]["rr"]
