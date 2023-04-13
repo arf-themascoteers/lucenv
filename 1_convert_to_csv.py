@@ -23,7 +23,7 @@ for f in os.listdir(source):
     start = index + len(search_text)
     csv_content = content[start:]
     csv_content = csv_content.strip()
-    out_file = f"data/csvs/{the_id}"
+    out_file = f"data/csvs/{the_id}.csv"
     out = open(out_file,"w")
     csv_content_io = out.write(csv_content)
     out.close()
