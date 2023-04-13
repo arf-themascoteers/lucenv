@@ -13,11 +13,11 @@ def extract_id(filename):
 
 data = []
 
-for filename in os.listdir("ECA_blend_rr"):
+for filename in os.listdir("data"):
     the_id = extract_id(filename)
     if the_id is None:
         continue
-    path = os.path.join("ECA_blend_rr", filename)
+    path = os.path.join("data", filename)
     f = open(path,"r")
     content = f.read()
     search_text = "See files sources.txt and stations.txt for more info."
