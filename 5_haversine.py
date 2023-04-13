@@ -23,7 +23,7 @@ for vis_index in range(len(vis_df)):
     min_index = np.argmin(distances)
     vis_df.at[vis_index,"rr"] = rrs_df.iloc[min_index]["rr"]
     vis_df.at[vis_index,"distance"] = distances[min_index]
-    if vis_index%100 == 0:
+    if vis_index%10 == 0:
         print(vis_index)
 
 
